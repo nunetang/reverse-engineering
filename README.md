@@ -133,10 +133,11 @@ module.exports = function(sequelize, DataTypes) {
   });
   return User;
 };
+```
 
 9. Let us go back to our *server.js* file and add a few lines of code. We will need to require the server to read the models folder and we will also need it to sync our inserts and reads to the database. Your server.js should look like this:
 
-// Requiring necessary npm middleware packages 
+```// Requiring necessary npm middleware packages 
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
@@ -177,6 +178,7 @@ module.exports = function(req, res, next) {
   // If the user isnt' logged in, redirect them to the login page
   return res.redirect("/");
 };
+```
 
 This will be exported also and we will need this to restrict access to pages meant for logged in users only.
 
