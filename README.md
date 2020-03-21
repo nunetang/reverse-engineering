@@ -166,10 +166,11 @@ db.sequelize.sync().then(function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
+```
 
 10. Now let us navigate to the config folder and create another folder called *middleware* and inside that folder create a file called *isAuthenticated.js*. You should have `/config/middleware/isAuthenticated.js`. Open and edit the *isAuthenticated.js* file to match this:
 
-// This is middleware for restrictng routes a user is not allowed to visit if not logged in
+```// This is middleware for restrictng routes a user is not allowed to visit if not logged in
 module.exports = function(req, res, next) {
   // If the user is logged in, continue with the request to the restricted route
   if (req.user) {
@@ -184,7 +185,7 @@ This will be exported also and we will need this to restrict access to pages mea
 
 11. It is time to set up passport. In the config folder create a file called passport.js. Open the file and input the following in the file. The comments explain it all.
 
-//we import passport packages required for authentication
+```//we import passport packages required for authentication
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 //
